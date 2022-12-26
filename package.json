@@ -1,0 +1,19 @@
+{
+  "name": "js-christmas-card-match",
+  "version": "1.0.0",
+  "description": "christmas card match ",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdm-nc/js-card-match.git"
+  },
+  "author": "mdm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdm-nc/js-card-match/issues"
+  },
+  "homepage": "https://github.com/mdm-nc/js-card-match#readme"
+}

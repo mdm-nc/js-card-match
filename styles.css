@@ -1,0 +1,210 @@
+@font-face {
+    font-family: "KalamRegular";
+    src: url("assets/Fonts/KalamRegular.woff") format("woff"), url("Assets/Fonts/BeautyDemo.woff") format("woff");
+}
+
+@font-face {
+    font-family: "MusicianDemo";
+    src: url("assets/Fonts/MusicianDemo.woff") format("woff"), url("Assets/Fonts/MusicianDemo.woff2") format("woff2");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100vh; /* html page spans the full height of browser page */
+    cursor: url("Assets/Cursors/ps-tree-cursor-angle.cur"), auto;
+}
+body {
+    margin: 0;
+    background: radial-gradient(#2277f7, #00273d);
+}
+
+.page-title {
+    color: white;
+    font-family: MusicianDemo, serif;
+    font-weight: normal;
+    text-align: center;
+    font-size: 6em;
+    margin:  40px 15px 20px 20px;  /* T B R L */
+}
+
+.game-info-container {
+    grid-column: 1/-1;  /* spans all of the columns */
+    display: flex;
+    justify-content: space-between; /* space out info at margins */
+    margin:  0px 0px 0px 0px;  /* T B R L */
+}
+
+.game-info {
+    color: #308a5d;
+    font-family: KalamRegular, serif;
+    font-size: 3em;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    justify-content: center;
+    perspective: 500px; /* 3-D rotation */
+}
+
+.card {
+    position: relative; /* so card-face stays inside of card */
+    width: 125px;
+    height: 175px;
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;  /* Hide any extra graphics */
+    backface-visibility: hidden; /* hide anything on other side */
+    border-radius: 12px;
+    border-width: 1px;
+    border-style: solid;
+    transition: transform 500ms ease-in-out;  /* this works w/ perspective in game-containter to rotate card */
+}
+
+
+.card:hover {
+    cursor: url("Assets/Cursors/ps-tree-cursor2-angle.cur"), auto;
+}
+
+ /* to test this changed to :hover and one of the cards to visible, then back to .matched  */
+.card.visible .card-value { 
+    animation: dance 1.5s linear infinite 500ms; 
+}
+
+/* dance animation */
+@keyframes dance {
+    0%, 100% {
+        transform: rotate(0);
+    }
+    30% {
+        transform: rotate(-5deg);
+    }
+    70% {
+        transform: rotate(5deg);
+    }
+}
+
+/* Spread overlay to fill game screen and align text center */
+.overlay-text {
+    display: none; /* doesn't show unless visible property is set */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    /* Make sure it is on top */
+    z-index: 100;
+    color: #ffffff;
+    font-family: MusicianDemo, serif;
+}
+
+.overlay-text-small {
+    font-size: .3em;
+}
+
+.overlay-text.visible {
+    display: flex;
+    flex-direction: column; /* stack text */
+    animation: overlay-grow 500ms forwards;
+}
+
+/* define overlay-grow */
+@keyframes overlay-grow {
+    from {
+        background-color: rgba(0,0,0,0);
+        font-size: 0;
+    }
+    to {
+        font-size: 10em;
+        background-color: rgba(0,0,0,.8);    
+    }
+}
+
+/* to test front cards use :hover instead of .visible  */
+.card.visible .card-back {
+    transform: rotateY(-180deg);
+}
+
+/* to test front cards use :hover instead of .visible  */
+.card.visible .card-front {
+    transform: rotateY(0);
+}
+
+.card-front { 
+    transform: rotateY(180deg); /* flip card upside down */
+    background-color: white;
+    border-color: #333;
+}
+
+.card-back {
+    background-color: rgb(13, 126, 60);
+    border-color: #075c19;
+}
+
+.card-value {
+    transition: transform 100ms ease-in-out;
+    transform: scale(.9);
+}
+
+.card-front:hover .card-value {
+    transform: scale(1);
+}
+
+.card-border { 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: width 100ms ease-in-out, height 100ms ease-in-out;
+}
+
+.card-face:hover .card-border {
+    width: 110%;
+    height: 110%
+}
+
+/* could specify web for each corner and style independently 
+.cob-web-top-left {
+    transform: rotate(270deg);
+    top: 0;
+    left: 0;
+}
+*/
+
+.snow-tree {
+    /* align-self: flex-start;
+    transform: translateY(25px);  move image down ten pixels; crop the overflow in the card-face class */
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    transition: transform 100ms ease-in-out; /* little animation for 100ms when hover - see below*/
+}
+
+.card-back:hover .snow-tree {
+   /* transform: translateY(0); */
+   width: 100%;
+   height: 100%
+}
+
+/* @media lets you apply styles based on criteria */
+@media (max-width: 600px) {
+    .game-container {
+        grid-template-columns: repeat(2, auto);
+    }
+    .game-info-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

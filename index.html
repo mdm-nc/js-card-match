@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" async></script>
+    <title>Holiday Card Match</title>
+</head>
+<body>
+    <h1 class="page-title">Holiday Card Match</h1>
+    <!-- Add overlays for Start, Victory, and Game over -->
+    <div class="overlay-text visible">
+        Click to Start
+    </div>
+    <div id="game-over-text" class="overlay-text">
+        Game Over
+        <span class="overlay-text-small">Click to Restart</span>
+    </div>
+    <div id="victory-text" class="overlay-text">
+        Victory!
+        <span class="overlay-text-small">Click to Restart</span>
+    </div>
+    <div class="game-container">
+        <div class="game-info-container">
+            <div class="game-info">
+                Time <span id="time-remaining">100</span>
+            </div>
+            <div class="game-info">
+                Flips <span id="flips">0</span>
+            </div>
+        </div>
+        <div class="card">   <!-- transform in css when card is visible -->
+            <div class="card-back card-face"> 
+                <img class="snow-tree" src="Assets/Images/card-back.png">
+                <img class="card-border"  src="Assets/Images/border-card1.png">
+            </div>
+            <div class="card-front card-face"> 
+                <!-- card value to be matched -->
+                <img class="card-border"  src="Assets/Images/border-card2.png">
+                <img class="card-value" src="Assets/Images/candy-canes-card.png">
+            </div>
+        </div>
+        <div class="card">   <!-- transform in css when card is visible -->
+            <div class="card-back card-face"> 
+                <img class="snow-tree" src="Assets/Images/card-back.png">
+                <img class="card-border"  src="Assets/Images/border-card1.png">
+            </div>
+            <div class="card-front card-face"> 
+                <!-- card value to be matched -->
+                <img class="card-border"  src="Assets/Images/border-card2.png">
+                <img class="card-value" src="Assets/Images/candy-canes-card.png">
+            </div>
+        </div>
+        <div class="card">   <!-- transform in css when card is visible -->
+            <div class="card-back card-face"> 
+                <img class="snow-tree" src="Assets/Images/card-back.png">
+                <img class="card-border"  src="Assets/Images/border-card1.png">
+            </div>
+            <div class="card-front card-face"> 
+                <!-- card value to be matched -->
+                <img class="card-border"  src="Assets/Images/border-card2.png">
+                <img class="card-value" src="Assets/Images/mitten-card.png">
+            </div>
+        </div>
+        <div class="card">   <!-- transform in css when card is visible -->
+            <div class="card-back card-face"> 
+                <img class="snow-tree" src="Assets/Images/card-back.png">
+                <img class="card-border"  src="Assets/Images/border-card1.png">
+            </div>
+            <div class="card-front card-face"> 
+                <!-- card value to be matched -->
+                <img class="card-border"  src="Assets/Images/border-card2.png">
+                <img class="card-value" src="Assets/Images/mitten-card.png">
+            </div>
+        </div>
+        <div class="card">   <!-- transform in css when card is visible -->
+            <div class="card-back card-face"> 
+                <img class="snow-tree" src="Assets/Images/card-back.png">
+                <img class="card-border"  src="Assets/Images/border-card1.png">
+            </div>
+            <div class="card-front card-face"> 
+                <!-- card value to be matched -->
+                <img class="card-border"  src="Assets/Images/border-card2.png">
+                <img class="card-value" src="Assets/Images/ornament-card.png">
+            </div>
+        </div>
+        <div class="card">   <!-- transform in css when card is visible -->
+            <div class="card-back card-face"> 
+                <img class="snow-tree" src="Assets/Images/card-back.png">
+                <img class="card-border"  src="Assets/Images/border-card1.png">
+            </div>
+            <div class="card-front card-face"> 
+                <!-- card value to be matched -->
+                <img class="card-border"  src="Assets/Images/border-card2.png">
+                <img class="card-value" src="Assets/Images/ornament-card.png">
+            </div>
+        </div>
+        <div class="card">   <!-- transform in css when card is visible -->
+            <div class="card-back card-face"> 
+                <img class="snow-tree" src="Assets/Images/card-back.png">
+                <img class="card-border"  src="Assets/Images/border-card1.png">
+            </div>
+            <div class="card-front card-face"> 
+                <!-- card value to be matched -->
+                <img class="card-border"  src="Assets/Images/border-card2.png">
+                <img class="card-value" src="Assets/Images/present-card.png">
+            </div>
+        </div>
+        <div class="card">   <!-- transform in css when card is visible -->
+            <div class="card-back card-face"> 
+                <img class="snow-tree" src="Assets/Images/card-back.png">
+                <img class="card-border"  src="Assets/Images/border-card1.png">
+            </div>
+            <div class="card-front card-face"> 
+                <!-- card value to be matched -->
+                <img class="card-border"  src="Assets/Images/border-card2.png">
+                <img class="card-value" src="Assets/Images/present-card.png">
+            </div>
+        </div>
+        <div class="card">   <!-- transform in css when card is visible -->
+            <div class="card-back card-face"> 
+                <img class="snow-tree" src="Assets/Images/card-back.png">
+                <img class="card-border"  src="Assets/Images/border-card1.png">
+            </div>
+            <div class="card-front card-face"> 
+                <!-- card value to be matched -->
+                <img class="card-border"  src="Assets/Images/border-card2.png">
+                <img class="card-value" src="Assets/Images/santa-card.png">
+            </div>
+        </div>
+        <div class="card">   <!-- transform in css when card is visible -->
+            <div class="card-back card-face"> 
+                <img class="snow-tree" src="Assets/Images/card-back.png">
+                <img class="card-border"  src="Assets/Images/border-card1.png">
+            </div>
+            <div class="card-front card-face"> 
+                <!-- card value to be matched -->
+                <img class="card-border"  src="Assets/Images/border-card2.png">
+                <img class="card-value" src="Assets/Images/santa-card.png">
+            </div>
+        </div>
+        <div class="card">   <!-- transform in css when card is visible -->
+            <div class="card-back card-face"> 
+                <img class="snow-tree" src="Assets/Images/card-back.png">
+                <img class="card-border"  src="Assets/Images/border-card1.png">
+            </div>
+            <div class="card-front card-face"> 
+                <!-- card value to be matched -->
+                <img class="card-border"  src="Assets/Images/border-card2.png">
+                <img class="card-value" src="Assets/Images/snowman-card.png">
+            </div>
+        </div>
+        <div class="card">   <!-- transform in css when card is visible -->
+            <div class="card-back card-face"> 
+                <img class="snow-tree" src="Assets/Images/card-back.png">
+                <img class="card-border"  src="Assets/Images/border-card1.png">
+            </div>
+            <div class="card-front card-face"> 
+                <!-- card value to be matched -->
+                <img class="card-border"  src="Assets/Images/border-card2.png">
+                <img class="card-value" src="Assets/Images/snowman-card.png">
+            </div>
+        </div>
+        <div class="card">   <!-- transform in css when card is visible -->
+            <div class="card-back card-face"> 
+                <img class="snow-tree" src="Assets/Images/card-back.png">
+                <img class="card-border"  src="Assets/Images/border-card1.png">
+            </div>
+            <div class="card-front card-face"> 
+                <!-- card value to be matched -->
+                <img class="card-border"  src="Assets/Images/border-card2.png">
+                <img class="card-value" src="Assets/Images/stocking-card.png">
+            </div>
+        </div>
+        <div class="card">   <!-- transform in css when card is visible -->
+            <div class="card-back card-face"> 
+                <img class="snow-tree" src="Assets/Images/card-back.png">
+                <img class="card-border"  src="Assets/Images/border-card1.png">
+            </div>
+            <div class="card-front card-face"> 
+                <!-- card value to be matched -->
+                <img class="card-border"  src="Assets/Images/border-card2.png">
+                <img class="card-value" src="Assets/Images/stocking-card.png">
+            </div>
+        </div>
+        <div class="card">   <!-- transform in css when card is visible -->
+            <div class="card-back card-face"> 
+                <img class="snow-tree" src="Assets/Images/card-back.png">
+                <img class="card-border"  src="Assets/Images/border-card1.png">
+            </div>
+            <div class="card-front card-face"> 
+                <!-- card value to be matched -->
+                <img class="card-border"  src="Assets/Images/border-card2.png">
+                <img class="card-value" src="Assets/Images/tree-card.png">
+            </div>
+        </div>
+        <div class="card">   <!-- transform in css when card is visible -->
+            <div class="card-back card-face"> 
+                <img class="snow-tree" src="Assets/Images/card-back.png">
+                <img class="card-border"  src="Assets/Images/border-card1.png">
+            </div>
+            <div class="card-front card-face"> 
+                <!-- card value to be matched -->
+                <img class="card-border"  src="Assets/Images/border-card2.png">
+                <img class="card-value" src="Assets/Images/tree-card.png">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
